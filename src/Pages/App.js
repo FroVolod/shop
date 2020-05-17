@@ -7,6 +7,7 @@ import {
 
 import { ProductList } from 'Pages/ProductList';
 import { ProductDetail } from 'Pages/ProductDetail';
+import { ShoppingCart } from 'Pages/ShoppingCart';
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/details">
           <ProductDetail />
+        </Route>
+        <Route path="/shopping-cart">
+          <ShoppingCart />
         </Route>
       </Switch>
     </Router>
