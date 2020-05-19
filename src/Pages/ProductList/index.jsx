@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 import { MyCard } from './Blocks';
 import { MyLayout } from 'components/myLayout';
 
@@ -33,14 +33,12 @@ export const ProductList = () => {
       </Col>
     )
   };
-  const content = (
+  const contentProductList = (
     <Row justify="space-around">
       {data.map(el => (renderCards(el)))}
     </Row>
   );
   return(
-    <div>
-      <MyLayout content={ content }></MyLayout>
-    </div>
+    <MyLayout content={ contentProductList } />
   )
 }

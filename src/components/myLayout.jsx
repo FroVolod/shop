@@ -12,7 +12,7 @@ export const MyLayout = ({ content }) => {
         <Header style={{ color: 'white' }}>
           <Row justify="space-around">
             <Link to="/"><Col span={2}>Каталог</Col></Link>
-            <Link to="/shoppig-cart"><Col span={2}>Корзина</Col></Link>
+            <Link to="/shopping-cart"><Col span={2}>Корзина</Col></Link>
           </Row>
         </Header>
         <Content>
