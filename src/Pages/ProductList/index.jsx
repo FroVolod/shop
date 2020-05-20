@@ -1,9 +1,8 @@
 import React from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 import { MyCard } from './Blocks';
+import { MyLayout } from 'components/myLayout';
 
-
-const { Header, Footer, Content } = Layout;
 
 const data = [
   {
@@ -33,18 +32,13 @@ export const ProductList = () => {
         <MyCard el={el}></MyCard>
       </Col>
     )
-  }
+  };
+  const contentProductList = (
+    <Row justify="space-around">
+      {data.map(el => (renderCards(el)))}
+    </Row>
+  );
   return(
-    <div>
-      <Layout style={{ minHeight: '100vh' }}>
-        <Header>Header</Header>
-        <Content>
-          <Row justify="space-around">
-            {data.map(el => (renderCards(el)))}
-          </Row>
-        </Content>
-        <Footer>Footer</Footer>
-      </Layout>
-    </div>
+    <MyLayout content={ contentProductList } />
   )
 }
