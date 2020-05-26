@@ -5,9 +5,9 @@ import {
   Route,
 } from "react-router-dom";
 
-import { ProductList } from 'Pages/ProductList';
-import { ProductDetail } from 'Pages/ProductDetail';
-import { ShoppingCart } from 'Pages/ShoppingCart';
+import { ProductList } from 'components/ProductList';
+import { ProductDetail } from 'components/ProductDetail';
+import { ShoppingCart } from 'components/ShoppingCart';
 
 
 function App() {
