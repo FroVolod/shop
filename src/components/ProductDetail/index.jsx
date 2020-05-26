@@ -1,10 +1,9 @@
-import React from 'react';
+import {connect} from 'react-redux';
 
-import { MyLayout } from 'components/myLayout'
+import {ProductDetailComponent} from './productDetail';
 
 
-export const ProductDetail = () => {
-  return(
-    <MyLayout content={<h1>О продукте</h1>} />
-  )
-}
+const mapStateToProps = (state) => ({
+  item: state.products.selectedProduct
+})
+export const ProductDetail = connect(mapStateToProps)(ProductDetailComponent)
