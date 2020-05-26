@@ -6,9 +6,12 @@ import ReactCardFlip from 'react-card-flip';
 
 const { Meta } = Card;
 
-export const MyCard = ({el}) => {
+export const MyCard = ({el, selectProduct}) => {
   const [isFlipped, changeFlipped] = useState(false)
-  const onChangeFlipped = () => { changeFlipped(!isFlipped) }
+  const onChangeFlipped = () => {
+    changeFlipped(!isFlipped);
+    selectProduct(el)
+  }
   return(
     <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
       <Card
