@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Divider, InputNumber, Button } from 'antd';
 
 
-export const ShoppingCartItem = ({name, image, count, price, onCountChange, deleteItem}) => {
+export const ShoppingCartItem = ({name, image, count, price, onCountChange, deleteItem, index}) => {
   return (
     <div>
       <Divider orientation="left" />
@@ -28,7 +28,7 @@ export const ShoppingCartItem = ({name, image, count, price, onCountChange, dele
           Итого { price * count } грн.
         </Col>
         <Col span={4}>
-          <Button type="danger" onClick={deleteItem}>Удалить из корзины</Button>
+          <Button type="danger" onClick={() => deleteItem(index)}>Удалить из корзины</Button>
         </Col>
       </Row>
     </div>
