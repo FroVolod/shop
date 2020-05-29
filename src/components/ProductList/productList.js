@@ -5,7 +5,6 @@ import { MyLayout } from 'components/myLayout';
 
 
 export const ProductListComponent = ({selectProductAction, data}) => {
-  console.log('&&&&&&&&&&&&&&', data, selectProductAction)
   const renderCards = el => {
     return(
       <Col span={4}>

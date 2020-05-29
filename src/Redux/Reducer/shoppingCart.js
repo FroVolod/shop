@@ -21,12 +21,15 @@ export const shoppingCart = (state = initialState, action) => {
     //   return {
     //     ...state
     //   };
-    case DELETE_ITEM:
+    case DELETE_ITEM: {
+      const newItems = [...state.cartItems];
+      newItems.splice(action.index, 1);
       return {
         ...state,
-        // cartItems: [...state.cartItems.splice(action.id, 1)]
+        cartItems: newItems,
         deletedItem: action.index
       };
+    };     
     default:
       return {
         ...state
