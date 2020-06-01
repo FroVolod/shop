@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { ShoppingCartComponent } from './shoppingCart';
+import {ShoppingCartItemsComponent} from './ShoppingCartItems'
 import {deleteItemAction, changeCountAction} from 'Redux/Actions/shoppingCart';
 
 
@@ -11,4 +12,5 @@ const actions = {
   deleteItemAction,
   changeCountAction
 };
-export const ShoppingCart = connect(mapStateToProps, actions)(ShoppingCartComponent);
+export const ShoppingCart = connect(mapStateToProps)(ShoppingCartComponent);
+export const ShoppingCartItems = connect(mapStateToProps, actions)(ShoppingCartItemsComponent);

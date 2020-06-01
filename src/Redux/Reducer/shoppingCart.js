@@ -16,7 +16,7 @@ export const shoppingCart = (state = initialState, action) => {
     case SELECT_PRODUCT:
       return {
         ...state,
-        cartItems: [...new Set([...state.cartItems, action.product])]
+        cartItems: [...new Set([...state.cartItems, {...action.product, count: 1}])]
       };
     case CHANGE_COUNT_ITEM:
       newItems = [...state.cartItems];

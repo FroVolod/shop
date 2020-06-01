@@ -1,27 +1,19 @@
 import React from 'react';
 
 import { MyLayout } from 'components/myLayout';
-import { ShoppingCartItem } from './ShoppingCartItem';
+import { ShoppingCartItems } from 'components/ShoppingCart';
 import { EmptyShoppingCart } from './EmptyShoppingCart';
 
 
-export const ShoppingCartComponent = ({ cartItems, deleteItemAction, changeCountAction }) => {
+export const ShoppingCartComponent = ({ cartItems }) => {
   const contentShoppingCart = (
     <div>
       <h1>Корзина</h1>
-      {cartItems.map((el, index) => <ShoppingCartItem
-        name={el.name}
-        image={el.image}
-        count={el.count}
-        price={el.price}
-        onCountChange={(count) => (changeCountAction(index, count))}
-        deleteItem={deleteItemAction}
-        index={index}
+      <ShoppingCartItems
       />
-      )}
-      <h2>
+      <h5>
         Общая стоимость покупки {cartItems.reduce((sum, el) => sum + el.price * el.count, 0)} грн.
-      </h2>
+      </h5>
     </div>
   );
   const emptyShoppingCart = (

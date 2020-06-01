@@ -28,7 +28,6 @@ const initialState = {
 export const products = (state = initialState, action) => {
   switch (action.type) {
     case SELECT_PRODUCT: 
-      action.product['count'] = 1;
       return {
         ...state,
         selectedProduct: action.product
