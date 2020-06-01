@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux';
 
 import {products} from './products';
+import {shoppingCart} from './shoppingCart';
 
 
 const appReducer = combineReducers({
-  products
+  products,
+  shoppingCart
 });
 export {appReducer};
