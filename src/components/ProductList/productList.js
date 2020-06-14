@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row, Col } from 'antd';
 import { MyCard } from './Blocks';
 import { MyLayout } from 'components/myLayout';
 
 
-export const ProductListComponent = ({selectProductAction, data}) => {
+export const ProductListComponent = ({selectProductAction, data, getProduct}) => {
+  useEffect(() => {
+    getProduct()
+  }, []);
   const renderCards = el => {
     return(
       <Col span={4}>

@@ -1,4 +1,4 @@
-import {SELECT_PRODUCT} from '../Actions/products'
+import {SELECT_PRODUCT, GET_PRODUCT} from '../Actions/products'
 
 
 const initialState = {
@@ -31,6 +31,20 @@ export const products = (state = initialState, action) => {
       return {
         ...state,
         selectedProduct: action.product
+      };
+    case GET_PRODUCT.REQUEST:
+      return {
+        ...state
+      };
+    case GET_PRODUCT.SUCCESS:
+      return {
+        ...state,
+        data: action.data.products
+      };
+    case GET_PRODUCT.FAILURE:
+      return {
+        ...state,
+        error: action,
       };
     default:
       return {
